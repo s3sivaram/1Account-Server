@@ -88,11 +88,9 @@ Tables:
 1) User:
     - user_id
     - user_name
-    - user_email
+    - user_email  (primary key)
     - user_password
     - user_mobile
-    - user_created_at
-    - user_updated_at
 
 2) UserClients:
     - user_id
@@ -103,20 +101,20 @@ Tables:
     - client_mobile
 
 3) UserandToBeGiven:
-    - user_id
+    - user_id (not null)
     - user_name
-    - client_id
+    - client_id (not null)
     - client_name
-    - transaction_date
-    - amount_to_be_given
+    - transaction_date (not null)
+    - amount_to_be_given (not null)
     - approval_status
 
 
 4) UserandToBeReceived:
-    - user_id
+    - user_id (not null)
     - user_name
-    - client_id
+    - client_id (not null)
     - client_name
-    - transaction_date
-    - amount_to_be_received
+    - transaction_date (not null)
+    - amount_to_be_received (not null)
     - approval_status
