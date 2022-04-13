@@ -1,0 +1,122 @@
+//---------------------------------------------------------------------------//
+Project Name: 1Account.
+Tag line: "For all the parties involved"
+Creation Date:13-Apr-2022.
+Author:s3sivaram@gmail.com.
+Component Name: 1Account-Server.(other part is in 1Account-Client)
+//---------------------------------------------------------------------------//
+
+Actors:
+1) User 
+    // 1Account creation related
+    - who can create an account with unique email ID in the system.
+    - who can login to the account.
+    - who can logout from the account.
+    - who can change the password.
+    - who can delete the account.
+    - who can view the account details.
+    - who can modify account details (update email, mobile number).
+
+    // user's account related ...
+    - who can add a client to his account(adding client's email id, mobile 
+      number)
+    - who can view the list of all his clients.
+    - who can initiate a transaction.
+    - who can approve his pending transactions.
+    - who can delete an unapproved transaction.
+    - who can view the list of all his transactions.
+    - who can view the list of all his approved transactions.
+    - who can view the list of all his unapproved transactions.
+    - who can view the list of all his pending transactions(that aren't 
+      approved by his clients)
+
+
+
+
+
+//---------------------------------------------------------------------------//
+
+APIs:
+
+
+1. To create an 1Account account:
+    /1account/v1/create-user
+
+2. To login to an 1Account account:
+    /1account/v1/login-user
+
+3. To logout from an 1Account account:
+    /1account/v1/logout-user
+
+4. To change the profile details of an 1Account account:
+    /1account/v1/change-user-profile
+
+5. To delete an 1Account account:
+    /1account/v1/delete-user
+
+6. To view the list of user's clients
+    /1account/v1/view-user-clients
+
+7. To add a client to his account
+    /1account/v1/add-client
+
+8. To view the list of all user's transactions
+    /1account/v1/view-user-transactions
+
+9. To view the list of all user's approved transactions
+    /1account/v1/view-user-approved-transactions
+
+10. To view the list of all user's unapproved transactions
+    /1account/v1/view-user-unapproved-transactions
+
+11. To view the list of all user's pending transactions
+    /1account/v1/view-user-pending-transactions
+
+12. To initiate a transaction
+    /1account/v1/initiate-transaction
+
+13. To approve a transaction
+    /1account/v1/approve-transaction
+
+14. To delete an unapproved transaction
+    /1account/v1/delete-transaction
+
+//---------------------------------------------------------------------------//
+
+Tables:
+
+1) User:
+    - user_id
+    - user_name
+    - user_email
+    - user_password
+    - user_mobile
+    - user_created_at
+    - user_updated_at
+
+2) UserClients:
+    - user_id
+    - user_name
+    - client_id
+    - client_name
+    - client_email
+    - client_mobile
+
+3) UserandToBeGiven:
+    - user_id
+    - user_name
+    - client_id
+    - client_name
+    - transaction_date
+    - amount_to_be_given
+    - approval_status
+
+
+4) UserandToBeReceived:
+    - user_id
+    - user_name
+    - client_id
+    - client_name
+    - transaction_date
+    - amount_to_be_received
+    - approval_status
